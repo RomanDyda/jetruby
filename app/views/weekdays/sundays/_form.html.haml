@@ -1,0 +1,26 @@
+- if current_user && current_user.lunchesadmin?
+  .row
+    .col-md-6.col-md-offset-3
+      = form_for [:weekdays, @sunday] do |form|
+        - if @sunday.errors.any?
+          #error_explanation
+            %h4
+              = pluralize(@sunday.errors.count, "error")
+              prohibited
+              this sunday from being saved:
+            %ul
+              - @sunday.errors.full_messages.each do |msg|
+                %li= msg
+        .form-group
+          = form.label :name_of_the_dish
+          = form.text_field :name_of_the_dish, autofocus: true, autocomplete: "off", class: 'form-control'
+        .form-group
+          = form.label :description
+          = form.text_area :description, autofocus: true, autocomplete: "off", class: 'form-control'
+        .form-group
+          = form.label :price
+          = form.text_field :price, autofocus: true, autocomplete: "off", class: 'form-control'
+        .form-group
+          .row
+            .col-md-4= form.submit 'Save', class: 'btn btn-success btn-block'
+            .col-md-4= link_to 'Back', weekdays_sundays_path, class: 'btn btn-default btn-block'

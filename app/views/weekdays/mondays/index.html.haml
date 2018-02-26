@@ -1,0 +1,11 @@
+.row.questions
+  .col-md-6
+    %h2 Menu
+  .col-md-6.text-right
+    %br/
+    = link_to 'Back to weekdays',root_path,  class: 'btn btn-default'
+    - if current_user && current_user.lunchesadmin?
+      = link_to 'Create new dishes', new_weekdays_monday_path, class: 'btn btn-success'
+%br/
+%h3 First course
+= render 'blok'

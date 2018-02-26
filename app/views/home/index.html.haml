@@ -1,0 +1,21 @@
+- if current_user
+  %h1.text-center Lunch Ordering SaaS
+
+  .row
+    .col-md-4.col-md-offset-4
+      .form-group
+        .row
+          %br/
+          .col-md= link_to 'Monday', weekdays_mondays_path, class: 'btn btn-success btn-block'
+          %br/
+          .col-md= link_to 'Tuesday',weekdays_tuesdays_path, class: 'btn btn-success btn-block'
+          %br/
+          .col-md= link_to 'Wednesday',weekdays_wednesdays_path, class: 'btn btn-success btn-block'
+          %br/
+          .col-md= link_to 'Thursday',weekdays_thursdays_path, class: 'btn btn-success btn-block'
+          %br/
+          .col-md= link_to 'Friday',weekdays_fridays_path, class: 'btn btn-success btn-block'
+          %br/
+          .col-md= link_to 'Saturday',weekdays_saturdays_path, class: 'btn btn-success btn-block'
+          %br/
+          .col-md= link_to 'Sunday',weekdays_sundays_path, class: 'btn btn-success btn-block'

@@ -1,0 +1,21 @@
+%table.table
+  - @sundays.map do |sunday|
+    %tr
+      %td
+        %strong= sunday.name_of_the_dish
+        = sunday.description
+        = sunday.price
+      - if current_user && current_user.lunchesadmin?
+        %td= link_to 'Show', weekdays_sunday_path(sunday), class: 'btn btn-success'
+        %td= link_to 'Edit', edit_weekdays_sunday_path(sunday), class: 'btn btn-default'
+        %td= link_to 'Destroy', weekdays_sunday_path(sunday), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' }
+
+%h4.text-center Select one item from menu
+.row
+  .col-md-6.col-md-offset-4
+    = form_for :sunday do |form|
+      .form-group
+        .col-md-4= form.select :name_of_the_dish,  Sunday.all.map{|a| [a.name_of_the_dish] }, {}, {class: 'form-control', multiple: false}
+      .form-group
+        .row
+          .col-md-4= link_to 'Сonfirm', weekdays_orders_path, class: 'btn btn-success btn-block'

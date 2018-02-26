@@ -1,0 +1,2 @@
+module Weekdays::TuesdaysHelper
+end

@@ -1,0 +1,2 @@
+class Reguser < ApplicationRecord
+end

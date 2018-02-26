@@ -1,0 +1,8 @@
+- if current_user && current_user.lunchesadmin?
+
+  %h1 Registered users
+  - @users.map do |user|
+    .form-group
+    %strong= user.name
+    = user.email
+    = user.role

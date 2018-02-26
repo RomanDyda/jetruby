@@ -1,0 +1,11 @@
+- if current_user && current_user.lunchesadmin?
+	%h3 Weekday:
+	%strong= @tuesday.name_of_the_dish
+	%p= @tuesday.description
+	%p= @tuesday.price
+
+	=link_to 'Edit', edit_weekdays_tuesday_path(@tuesday), class: 'btn btn-success'
+
+	=link_to 'Back', weekdays_tuesdays_path, class: 'btn btn-success'
+
+	=link_to 'Destroy', weekdays_tuesday_path(@tuesday), class: 'btn btn-success', method: :delete, data: { confirm: 'Are you sure?' }
